@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../Route/BookRouteInformationParser.dart';
 import '../Route/BookRouterDelegate.dart';
 
-class NestedRouterDemo extends StatefulWidget {
+class RouterDemo extends StatefulWidget {
   @override
-  _NestedRouterDemoState createState() => _NestedRouterDemoState();
+  _RouterDemoState createState() => _RouterDemoState();
 }
 
-class _NestedRouterDemoState extends State<NestedRouterDemo> {
+class _RouterDemoState extends State<RouterDemo> {
   BookRouterDelegate _routerDelegate = BookRouterDelegate();
   BookRouteInformationParser _routeInformationParser =
       BookRouteInformationParser();

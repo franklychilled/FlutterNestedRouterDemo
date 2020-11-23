@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'App/NestedRouterDemo.dart';
+import 'App/RouterDemo.dart';
 
 void main() {
-  runApp(NestedRouterDemo());
+  runApp(RouterDemo());
 }

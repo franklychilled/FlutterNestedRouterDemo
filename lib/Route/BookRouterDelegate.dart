@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../App/AppShell.dart';
+import '../Extension/NoAnimationTransitionDelegate.dart';
 import 'BookRoutePath.dart';
 import 'BooksAppState.dart';
 
@@ -30,6 +31,7 @@ class BookRouterDelegate extends RouterDelegate<BookRoutePath>
   Widget build(BuildContext context) {
     return Navigator(
       key: navigatorKey,
+      transitionDelegate: NoAnimationTransitionDelegate(),
       pages: [
         MaterialPage(
           child: AppShell(appState: appState),
