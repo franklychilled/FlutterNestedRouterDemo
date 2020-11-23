@@ -1,4 +1,4 @@
-# Nav2 demo nested
+# Flutter Navigator 2.0 demo application with a nested router
 
 A demo Flutter project using Nav 2.0 and nested router.
 
