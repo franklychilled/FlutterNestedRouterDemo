@@ -19,7 +19,6 @@ class InnerRouterDelegate extends RouterDelegate<BookRoutePath>
       return;
     }
     _appState = value;
-    notifyListeners();
   }
 
   InnerRouterDelegate(this._appState);
@@ -50,7 +49,6 @@ class InnerRouterDelegate extends RouterDelegate<BookRoutePath>
       ],
       onPopPage: (route, result) {
         appState.selectedBook = null;
-        notifyListeners();
         return route.didPop(result);
       },
     );
@@ -65,6 +63,5 @@ class InnerRouterDelegate extends RouterDelegate<BookRoutePath>
 
   void _handleBookTapped(Book book) {
     appState.selectedBook = book;
-    notifyListeners();
   }
 }

@@ -18,7 +18,7 @@ class BooksAppState extends ChangeNotifier {
       // Remove this line if you want to keep the selected book when navigating
       // between "settings" and "home" which book was selected when Settings is
       // tapped.
-      selectedBook = null;
+      _selectedBook = null;
     }
     notifyListeners();
   }
