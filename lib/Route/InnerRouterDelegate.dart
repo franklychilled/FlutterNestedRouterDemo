@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../Data/Books.dart';
 import '../Extension/FadeAnimationPage.dart';
 import '../Model/Book.dart';
 import '../Screen/BookDetailsScreen.dart';
@@ -31,7 +32,7 @@ class InnerRouterDelegate extends RouterDelegate<BookRoutePath>
         if (appState.selectedIndex == 0) ...[
           FadeAnimationPage(
             child: BooksListScreen(
-              books: appState.books,
+              books: books,
               onTapped: _handleBookTapped,
             ),
             key: ValueKey('BooksListPage'),

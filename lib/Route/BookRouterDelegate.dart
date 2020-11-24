@@ -42,9 +42,7 @@ class BookRouterDelegate extends RouterDelegate<BookRoutePath>
           return false;
         }
 
-        if (appState.selectedBook != null) {
-          appState.selectedBook = null;
-        }
+        appState.selectedBook = null;
         notifyListeners();
         return true;
       },

@@ -13,7 +13,8 @@ class BookRouteInformationParser extends RouteInformationParser<BookRoutePath> {
     } else {
       if (uri.pathSegments.length >= 2) {
         if (uri.pathSegments[0] == 'book') {
-          return BooksDetailsPath(int.tryParse(uri.pathSegments[1]));
+          var remaining = uri.pathSegments[1];
+          return BooksDetailsPath(int.tryParse(remaining));
         }
       }
       return BooksListPath();

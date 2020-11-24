@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:nav2_demo_nested/Data/Books.dart';
 
 import '../Model/Book.dart';
 
 class BooksAppState extends ChangeNotifier {
-  int _selectedIndex;
+  int _selectedTabIndex;
 
   Book _selectedBook;
 
-  final List<Book> books = [
-    Book('Stranger in a Strange Land', 'Robert A. Heinlein'),
-    Book('Foundation', 'Isaac Asimov'),
-    Book('Fahrenheit 451', 'Ray Bradbury'),
-  ];
+  BooksAppState() : _selectedTabIndex = 0;
 
-  BooksAppState() : _selectedIndex = 0;
-
-  int get selectedIndex => _selectedIndex;
+  int get selectedIndex => _selectedTabIndex;
 
   set selectedIndex(int idx) {
-    _selectedIndex = idx;
-    if (_selectedIndex == 1) {
+    _selectedTabIndex = idx;
+    if (_selectedTabIndex == 1) {
       // Remove this line if you want to keep the selected book when navigating
       // between "settings" and "home" which book was selected when Settings is
       // tapped.
@@ -44,7 +39,6 @@ class BooksAppState extends ChangeNotifier {
     if (id < 0 || id > books.length - 1) {
       return;
     }
-
     _selectedBook = books[id];
     notifyListeners();
   }
