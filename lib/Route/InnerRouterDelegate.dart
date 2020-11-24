@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../Data/Books.dart';
 import '../Extension/FadeAnimationPage.dart';
 import '../Model/Book.dart';
-import '../Screen/BookDetailsScreen.dart';
-import '../Screen/BooksListScreen.dart';
+import '../Page/BookDetailsPage.dart';
+import '../Page/BooksListPage.dart';
 import '../Screen/SettingsScreen.dart';
 import 'BookRoutePath.dart';
 import 'BooksAppState.dart';
@@ -29,18 +28,9 @@ class InnerRouterDelegate extends RouterDelegate<BookRoutePath>
       key: navigatorKey,
       pages: [
         if (appState.selectedIndex == 0) ...[
-          FadeAnimationPage(
-            child: BooksListScreen(
-              books: books,
-              onTapped: _handleBookTapped,
-            ),
-            key: ValueKey('BooksListPage'),
-          ),
+          BooksListPage(handleBookTapped: _handleBookTapped),
           if (appState.selectedBook != null)
-            MaterialPage(
-              key: ValueKey(appState.selectedBook),
-              child: BookDetailsScreen(book: appState.selectedBook),
-            ),
+            BookDetailsPage(book: appState.selectedBook)
         ] else
           FadeAnimationPage(
             child: SettingsScreen(),
